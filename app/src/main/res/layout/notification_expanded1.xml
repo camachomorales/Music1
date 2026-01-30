@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/notification_background">
+
+    <!-- Carátula + Información + Flecha para COLAPSAR -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:id="@+id/iv_album_art_big"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentStart="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_music_note" />
+
+        <LinearLayout
+            android:id="@+id/song_info_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/iv_album_art_big"
+            android:layout_toStartOf="@id/btn_collapse"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_song_title_big"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Song Title"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:maxLines="1"
+                android:ellipsize="end" />
+
+            <TextView
+                android:id="@+id/tv_artist_big"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Artist"
+                android:textSize="14sp"
+                android:textColor="@android:color/white"
+                android:alpha="0.7"
+                android:maxLines="1"
+                android:ellipsize="end" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/btn_collapse"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:padding="6dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="Collapse"
+            android:src="@drawable/ic_keyboard_arrow_up"
+            android:tint="#FFFFFF"
+            android:background="@android:color/transparent"
+            android:clickable="true"
+            android:focusable="true" />
+
+    </RelativeLayout>
+
+    <!-- CONTROLES COMPLETOS (más compactos) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="8dp">
+
+        <!-- Shuffle -->
+        <ImageView
+            android:id="@+id/btn_shuffle"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_shuffle1"
+            android:background="@android:color/transparent"
+            android:contentDescription="Shuffle"
+            android:clickable="true"
+            android:focusable="true"
+            app:tint="#FFFFFF"
+            android:layout_marginEnd="8dp" />
+
+        <!-- Previous -->
+        <ImageView
+            android:id="@+id/btn_previous_big"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:src="@drawable/ic_previous"
+            android:background="@android:color/transparent"
+            android:contentDescription="Previous"
+            android:clickable="true"
+            android:focusable="true"
+            app:tint="#FFFFFF"
+            android:layout_marginEnd="12dp" />
+
+        <!-- Play/Pause (círculo más pequeño) -->
+        <FrameLayout
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/circle_white_background">
+
+            <ImageView
+                android:id="@+id/btn_play_pause_big"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_play_oscuro1"
+                android:contentDescription="Play/Pause"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="14dp" />
+        </FrameLayout>
+
+        <!-- Next -->
+        <ImageView
+            android:id="@+id/btn_next_big"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:src="@drawable/ic_next"
+            android:background="@android:color/transparent"
+            android:contentDescription="Next"
+            android:clickable="true"
+            android:focusable="true"
+            app:tint="#FFFFFF"
+            android:layout_marginEnd="8dp" />
+
+        <!-- Repeat -->
+        <ImageView
+            android:id="@+id/btn_repeat"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_repeat1"
+            android:background="@android:color/transparent"
+            android:contentDescription="Repeat"
+            android:clickable="true"
+            android:focusable="true"
+            app:tint="#FFFFFF" />
+
+    </LinearLayout>
+
+    <!-- Botón CLOSE -->
+    <ImageView
+        android:id="@+id/btn_close"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="12dp"
+        android:padding="6dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_close"
+        android:contentDescription="Close"
+        android:clickable="true"
+        android:focusable="true"
+        app:tint="#FFFFFF" />
+
+</LinearLayout>

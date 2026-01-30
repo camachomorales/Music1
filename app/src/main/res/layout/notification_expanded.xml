@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:background="@drawable/notification_background"
+android:padding="12dp">
+
+<!-- Fondo con carátula -->
+<ImageView
+    android:id="@+id/iv_background"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:scaleType="centerCrop"
+    android:src="@drawable/ic_music_note" />
+
+<!-- Overlay oscuro -->
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:background="#60000000"
+    android:text="" />
+
+<!-- Contenido sobre el fondo -->
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="-80dp"
+    android:paddingStart="12dp"
+    android:paddingEnd="12dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
+
+    <!-- Carátula pequeña -->
+    <ImageView
+        android:id="@+id/iv_album_art_big"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_music_note"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true" />
+
+    <!-- Información -->
+    <LinearLayout
+        android:id="@+id/song_info_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/iv_album_art_big"
+        android:layout_toStartOf="@id/btn_collapse"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_song_title_big"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Song Title"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@+id/tv_artist_big"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Artist"
+            android:textSize="12sp"
+            android:textColor="@android:color/white"
+            android:alpha="0.7"
+            android:maxLines="1"
+            android:ellipsize="end" />
+    </LinearLayout>
+
+    <!-- Botón de colapsar -->
+    <ImageView
+        android:id="@+id/btn_collapse"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="4dp"
+        android:padding="6dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:contentDescription="Collapse"
+        android:src="@drawable/ic_keyboard_arrow_up"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:focusable="true"
+        app:tint="#FFFFFF" />
+</RelativeLayout>
+
+<!-- Barra de progreso -->
+      <ProgressBar
+    android:id="@+id/progress_bar"
+    style="?android:attr/progressBarStyleHorizontal"
+    android:layout_width="match_parent"
+    android:layout_height="3dp"
+    android:layout_marginTop="6dp"
+    android:indeterminate="false"
+    android:progress="0"
+    android:progressTint="#FF2196F3" />
+
+<!-- Tiempos -->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="4dp">
+
+    <TextView
+        android:id="@+id/tv_current_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="00:00"
+        android:textColor="@android:color/white"
+        android:textSize="11sp" />
+
+    <TextView
+        android:id="@+id/tv_total_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="00:00"
+        android:textColor="@android:color/white"
+        android:textSize="11sp"
+        android:gravity="end" />
+</LinearLayout>
+
+<!-- Botones de control -->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="4dp">
+
+    <!-- Shuffle -->
+    <ImageView
+        android:id="@+id/btn_shuffle"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_shuffle1"
+        android:background="@android:color/transparent"
+        android:contentDescription="Shuffle"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginEnd="10dp"
+        app:tint="#FFFFFF" />
+
+    <!-- Previous -->
+    <ImageView
+        android:id="@+id/btn_previous_big"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/ic_previous"
+        android:background="@android:color/transparent"
+        android:contentDescription="Previous"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginEnd="12dp"
+        app:tint="#FFFFFF" />
+
+    <!-- Play/Pause -->
+    <FrameLayout
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/circle_white_background">
+
+        <ImageView
+            android:id="@+id/btn_play_pause_big"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_play_oscuro1"
+            android:contentDescription="Play/Pause"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="14dp" />
+    </FrameLayout>
+
+    <!-- Next -->
+    <ImageView
+        android:id="@+id/btn_next_big"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/ic_next"
+        android:background="@android:color/transparent"
+        android:contentDescription="Next"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginEnd="10dp"
+        app:tint="#FFFFFF" />
+
+    <!-- Repeat -->
+    <ImageView
+        android:id="@+id/btn_repeat"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_repeat1"
+        android:background="@android:color/transparent"
+        android:contentDescription="Repeat"
+        android:clickable="true"
+        android:focusable="true"
+        app:tint="#FFFFFF" />
+</LinearLayout>
+</LinearLayout>
