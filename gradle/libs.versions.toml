@@ -46,6 +46,9 @@ runtimeVersion = "1.9.4"
 cameraCore = "1.5.1"
 mediaVersion = "1.6.0"
 animationCore = "1.9.4"
+roomCommonJvm = "2.8.4"
+roomKtx = "2.8.4"
+androidxRuntime = "1.10.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -73,6 +76,9 @@ androidx-runtime = { group = "androidx.compose.runtime", name = "runtime", versi
 androidx-camera-core = { group = "androidx.camera", name = "camera-core", version.ref = "cameraCore" }
 androidx-media = { group = "androidx.media", name = "media", version.ref = "mediaVersion" }
 androidx-compose-animation-core = { group = "androidx.compose.animation", name = "animation-core", version.ref = "animationCore" }
+androidx-room-common-jvm = { group = "androidx.room", name = "room-common-jvm", version.ref = "roomCommonJvm" }
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "roomKtx" }
+runtime = { group = "androidx.compose.runtime", name = "runtime", version.ref = "androidxRuntime" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
